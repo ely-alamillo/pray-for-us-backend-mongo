@@ -33,8 +33,9 @@ connect
       logger.log(`Server listening on port ${process.env.PORT}`);
     });
   })
-  .catch(() => {
+  .catch((error) => {
     logger.log('\n**********************');
     logger.log('ERROR: Failed to connect to MongoDB.');
     logger.log('\n**********************');
+    logger.log(error);
   });
