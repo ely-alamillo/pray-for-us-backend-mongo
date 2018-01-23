@@ -1,6 +1,6 @@
 const SERVER_USER_ERROR = 422;
 
-export const sendUserError = (err, res) => {
+const sendUserError = (err, res) => {
   res.status(SERVER_USER_ERROR);
   if (typeof err === 'string') {
     return res.json({ err });
@@ -11,4 +11,10 @@ export const sendUserError = (err, res) => {
     });
   }
   res.json(err);
+};
+
+
+
+module.exports = {
+  sendUserError,
 };
