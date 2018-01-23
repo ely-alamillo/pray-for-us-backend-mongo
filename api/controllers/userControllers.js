@@ -1,6 +1,6 @@
+const { Comment } = require('../models/commentModel');
 const { Post } = require('../models/postModel');
 const { User } = require('../models/userModel');
-const { Comment } = require('../models/commentModel');
 const { sendUserError } = require('../helpers/helpers');
 
 const admin = require('firebase-admin');
