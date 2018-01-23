@@ -3,6 +3,15 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv').config();
+const admin = require('firebase-admin');
+
+admin.initializeApp({
+  credential: admin.credential.cert({
+    projectId: process.env.PROJECT_ID,
+    clientEmail: process.env.CLIENT_EMAIL,
+    privateKey: `${process.env.PRIVATE_KEY}`,
+  })
+});
 
 mongoose.Promise = global.Promise;
 
@@ -28,7 +37,7 @@ const connect = mongoose.connect(
 
 connect
   .then(() => {
-    logger.log('Connected to Mongoose...');
+    logger.log('Connected to MongoDB...');
     app.listen(process.env.PORT, () => {
       logger.log(`Server listening on port ${process.env.PORT}`);
     });
