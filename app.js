@@ -52,8 +52,8 @@ connect
     });
   })
   .catch((error) => {
-    logger.log('\n**********************');
+    logger.log('**********************');
     logger.log('ERROR: Failed to connect to MongoDB.');
-    logger.log('\n**********************');
+    logger.log('**********************');
     logger.log(error);
   });
